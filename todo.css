@@ -1,0 +1,30 @@
+body{
+    background-color: deepskyblue;
+}
+
+.container {
+    text-align: center; 
+}
+#inp{
+    vertical-align: middle;
+    width: 180px;
+    height:20px;
+    border:  1px solid black;
+    outline: none;
+}
+#btn1{
+    vertical-align: middle;
+    width: 30px;
+    height:23px;
+    border:  1px solid black;
+    color: blue;
+
+
+}
+#todo{
+    margin-top: 20px;
+}
+h2{
+    margin-left: 410px;
+    color: white;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="todo.css" />
+    <style></style>
+  </head>
+  <body>
+    <h2>TO DO LIST</h2>
+    <div class="container">
+      <input id="inp" type="text" placeholder="Add the things...." /><button
+        id="btn1"
+      >
+        +
+      </button>
+      <div id="toDo"></div>
+    </div>
+    <script>
+      let addButton = document.getElementById("btn1");
+      let toDo = document.getElementById("toDo");
+      let input = document.getElementById("inp");
+      addButton.addEventListener("click", function () {
+        var taskDiv = document.createElement("div");
+        var list = document.createElement("list");
+        list.innerText = input.value;
+        taskDiv.style.paddingTop = "10px";
+        taskDiv.style.paddingLeft = "0px";
+
+        var doneButton = document.createElement("button");
+        doneButton.innerHTML =
+          '<i class="fa fa-check-circle" aria-hidden="true"></i>';
+        doneButton.style.width = "25px";
+        doneButton.style.height = "23px";
+        doneButton.style.border = "none";
+        doneButton.style.backgroundColor = "#4CAF50";
+        doneButton.style.color = "white";
+        doneButton.style.marginLeft = "10px";
+        doneButton.style.marginRight = "10px";
+        doneButton.addEventListener("click", function () {
+          list.style.textDecoration = "line-through";
+        });
+        var deleteButton = document.createElement("button");
+        deleteButton.innerHTML =
+          '<i class="fa fa-trash-o" aria-hidden="true"></i>';
+        deleteButton.style.width = "25px";
+        deleteButton.style.height = "23px";
+        deleteButton.style.border = "none";
+        deleteButton.style.backgroundColor = "#f44336";
+        deleteButton.style.color = "white";
+        deleteButton.addEventListener("click", function () {
+          toDo.removeChild(taskDiv);
+        });
+
+        taskDiv.appendChild(list);
+        taskDiv.appendChild(doneButton);
+
+        taskDiv.appendChild(deleteButton);
+
+        toDo.appendChild(taskDiv);
+        input.value = ""; // Clear the input field after adding a task
+      });
+    </script>
+  </body>
+</html>
